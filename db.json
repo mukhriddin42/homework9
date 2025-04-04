@@ -1,14 +1,7 @@
 {
   "users": [
     {
-      "id": "1",
-      "firstname": "Leanne",
-      "lastname": "Bret",
-      "email": "Sincere@april.biz",
-      "phone": "97 768 68 88"
-    },
-    {
-      "id": "2",
+      "id": "2  ",
       "firstname": "Muhriddin",
       "lastname": "Ibragimov",
       "email": "imuhriddin700@gmail.com",
@@ -22,18 +15,25 @@
       "phone": "97 234 68 88"
     },
     {
-      "id": "5",
-      "firstname": "Nosirjon",
-      "lastname": "Yunusjonov",
-      "email": "nosirjon12@gmail.com",
-      "phone": "98 888 78 88"
+      "id": "42",
+      "firstname": "Bahodir",
+      "lastname": "Karabayev",
+      "email": "abay12@gmail.com",
+      "phone": "945567856"
     },
     {
-      "id": "5",
-      "firstname": "Nosirjon",
-      "lastname": "Yunusjonov",
-      "email": "nosirjon12@gmail.com",
-      "phone": "98 888 78 88"
+      "id": "42",
+      "firstname": "Nematullo ",
+      "lastname": "Fayziyev",
+      "email": "amirqul@gmail.com",
+      "phone": "933344554"
+    },
+    {
+      "id": "42",
+      "firstname": "Abduqodir",
+      "lastname": "Shomurodov",
+      "email": "shaod@gmail.com",
+      "phone": "+998932333443"
     }
   ]
 }

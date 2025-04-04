@@ -1,5 +1,6 @@
  // Modal elementlarini olish
  const modal = document.getElementById("modalForAdd");
+ const modalForUpdate = document.getElementById("modalForUpdate");
  const openModalBtn = document.querySelector(".btn-add");
  const closeModalBtn = document.querySelector(".close");
 
@@ -73,14 +74,17 @@ getData(API)
             let btnEdit = document.createElement("button")
             btnEdit.textContent = "Edit"
             btnEdit.classList.add("btn", "btn-edit")
+            btnEdit.setAttribute("data-id", el.id)
 
             let btnRemove = document.createElement("button")
             tdAction.appendChild(btnEdit)
             btnRemove.textContent = "Del"
             btnRemove.classList.add("btn", "btn-delete")
+            btnRemove.setAttribute("data-id", el.id)
 
             tdAction.appendChild(btnRemove)
             tdAction.classList.add("action-cell")
+
 
 
             tr.appendChild(tdId)
@@ -114,9 +118,8 @@ getData(API)
 // ************ create qismi ***************
 
 let saveUser = document.getElementById("saveUser");
-console.log(saveUser);
 
-async function addUser(resource) {
+async function addUser(resource, inputArr) {
     try {
         const request = await fetch(resource, {
             method: "POST",
@@ -124,11 +127,11 @@ async function addUser(resource) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                "id": "5",
-                "firstname": "Nosirjon",
-                "lastname": "Yunusjonov",
-                "email": "nosirjon12@gmail.com",
-                "phone": "98 888 78 88"
+                "id": "42",
+                "firstname": inputArr[0],
+                "lastname": inputArr[1],
+                "email": inputArr[2],
+                "phone": inputArr[3]
             })
         })
 
@@ -144,8 +147,60 @@ async function addUser(resource) {
 }
 
 saveUser.addEventListener("click", () => {
-    addUser(API)
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    const arr = [firstName, lastName, email, phone];
+    addUser(API, arr)
 })
 
 
 
+
+
+
+
+
+
+// ************ delete qismi ***************
+
+async function deleteUser(resource) {
+    try {
+        const request = await fetch(resource, {
+            method: "DELETE"
+        })
+
+        if (!request.ok) {
+            throw new Error(`HTTP error! Status: ${request.status}`)
+        }
+    } catch(error) {
+        console.log("Error posting user: ", error);
+    }
+}
+
+
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-delete")) {
+        const userId = event.target.getAttribute("data-id");
+        console.log(userId);
+        deleteUser(`${API}/${userId}`)
+    }
+})
+
+
+
+
+// *********** update qismi ***************
+
+
+/*
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-edit")) {
+        const userId = event.target.getAttribute("data-id");
+        console.log(userId);
+        console.log(document.getElementById("modalForUpdate"));
+        modalForUpdate.style.display = "block"
+    }
+})
+    */
