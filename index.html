@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>CRUD Database</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>CRUD Database</h1>
+        
+        <div id="modalForAdd" class="modal">
+            <form class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Yangi foydalanuvchi qo'shish</h2>
+                <input type="text" id="firstName" placeholder="First Name">
+                <input type="text" id="lastName" placeholder="Last Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="phone" placeholder="Phone">
+                <button id="saveUser">Saqlash</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                    <th>Hobby</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <!-- ichiga fetch API dan ma'lumot keladi  -->
+            </tbody>
+        </table>
+        
+        <div class="action-buttons">
+            <button class="btn btn-download">Download CSV</button>
+            <button class="btn btn-add">Add Item</button>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstname": "Leanne",
+      "lastname": "Bret",
+      "email": "Sincere@april.biz",
+      "phone": "97 768 68 88"
+    },
+    {
+        "id": "2",
+        "firstname": "Muhriddin",
+        "lastname": "Ibragimov",
+        "email": "imuhriddin700@gmail.com",
+        "phone": "97 234 68 88"
+    },
+    {
+        "id": "3",
+        "firstname": "Temurbek",
+        "lastname": "Nuriddinov",
+        "email": "temurbek27@gmail.com",
+        "phone": "97 234 68 88"
+    }
+  ]
+}
