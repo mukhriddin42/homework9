@@ -113,14 +113,38 @@ getData(API)
 
 // ************ create qismi ***************
 
-let saveUser = document.getElementById("saveUser")
-console.log(addUser);
+let saveUser = document.getElementById("saveUser");
+console.log(saveUser);
 
 async function addUser(resource) {
-    
+    try {
+        const request = await fetch(resource, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "id": "5",
+                "firstname": "Nosirjon",
+                "lastname": "Yunusjonov",
+                "email": "nosirjon12@gmail.com",
+                "phone": "98 888 78 88"
+            })
+        })
+
+        if (!request.ok) {
+            throw new Error(`HTTP error! Status: ${request.status}`)
+        }
+
+        const data = await request.json();
+        console.log("User added: ", data);
+    } catch(error) {
+        console.log("Error posting user: ", error);
+    }
 }
+
 saveUser.addEventListener("click", () => {
-    addUser()
+    addUser(API)
 })
 
 
